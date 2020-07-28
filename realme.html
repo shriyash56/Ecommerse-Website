@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="layout3.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+ <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+
+
+<script>
+
+function magnify(imgID, zoom) {
+  var img, glass, w, h, bw;
+  img = document.getElementById(imgID);
+
+  /* Create magnifier glass: */
+  glass = document.createElement("DIV");
+  glass.setAttribute("class", "img-magnifier-glass");
+
+  /* Insert magnifier glass: */
+  img.parentElement.insertBefore(glass, img);
+
+  /* Set background properties for the magnifier glass: */
+  glass.style.backgroundImage = "url('" + img.src + "')";
+  glass.style.backgroundRepeat = "no-repeat";
+  glass.style.backgroundSize = (img.width * zoom) + "px " + (img.height * zoom) + "px";
+  bw = 3;
+  w = glass.offsetWidth / 2;
+  h = glass.offsetHeight / 2;
+
+  /* Execute a function when someone moves the magnifier glass over the image: */
+  glass.addEventListener("mousemove", moveMagnifier);
+  img.addEventListener("mousemove", moveMagnifier);
+
+  /*and also for touch screens:*/
+  glass.addEventListener("touchmove", moveMagnifier);
+  img.addEventListener("touchmove", moveMagnifier);
+  function moveMagnifier(e) {
+    var pos, x, y;
+    /* Prevent any other actions that may occur when moving over the image */
+    e.preventDefault();
+    /* Get the cursor's x and y positions: */
+    pos = getCursorPos(e);
+    x = pos.x;
+    y = pos.y;
+    /* Prevent the magnifier glass from being positioned outside the image: */
+    if (x > img.width - (w / zoom)) {x = img.width - (w / zoom);}
+    if (x < w / zoom) {x = w / zoom;}
+    if (y > img.height - (h / zoom)) {y = img.height - (h / zoom);}
+    if (y < h / zoom) {y = h / zoom;}
+    /* Set the position of the magnifier glass: */
+    glass.style.left = (x - w) + "px";
+    glass.style.top = (y - h) + "px";
+    /* Display what the magnifier glass "sees": */
+    glass.style.backgroundPosition = "-" + ((x * zoom) - w + bw) + "px -" + ((y * zoom) - h + bw) + "px";
+  }
+
+  function getCursorPos(e) {
+    var a, x = 0, y = 0;
+    e = e || window.event;
+    /* Get the x and y positions of the image: */
+    a = img.getBoundingClientRect();
+    /* Calculate the cursor's x and y coordinates, relative to the image: */
+    x = e.pageX - a.left;
+    y = e.pageY - a.top;
+    /* Consider any page scrolling: */
+    x = x - window.pageXOffset;
+    y = y - window.pageYOffset;
+    return {x : x, y : y};
+  }
+}
+</script>
+
+
+</head>
+<body>
+
+<nav class="topnav">
+  <!-- Brand/logo -->
+   <a class="navbar-brand" href="#">
+    <img src="img/logo1.png" alt="logo" width=60px>
+  </a>
+
+  <div class="search-container">
+    <form action="/dummy.html">
+  <input type="text" name="search" placeholder="Search..">
+      <button type="submit"><i class="fa fa-search"></i></button>
+    </form>
+  </div>  
+
+  
+  <div class="button1" >
+  <button type="button" class="btn btn-secondary">Login</button>
+  </div>
+
+</nav>
+
+
+<div class="topnav1" id="myTopnav">
+  <a href="index.html">Home</a>
+  <a href="mobile.html">Mobiles</a>
+  <a href="/dummy.html">TV & Appliance</a>
+  <a href="/dummy.html">Men</a>
+  <a href="/dummy.html">Women</a>
+  <a href="/dummy.html">Baby & kids</a>
+  <a href="/dummy.html">Home & Furniture</a>
+
+  <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+    <i class="fa fa-bars"></i>
+  </a>
+</div>
+
+
+
+<script>
+function myFunction() {
+  var x = document.getElementById("myTopnav");
+  if (x.className === "topnav1") {
+    x.className += " responsive";
+  } else {
+    x.className = "topnav1";
+  }
+}
+</script>
+
+
+<div class="row">
+  <div class="column">
+  <div class="img-magnifier-container">
+    <img id="myimage" src= "img/realme.jpg" 
+            alt="Realme Image" / width="400" height="500">  
+  </div>
+  <div class="buttons">
+    <a href="/dummy.html" class="button" role="button" ><img src="https://img.icons8.com/android/24/000000/buy.png"/>Add To Cart</a>
+    <a href="/dummy.html" class="button" role="button"><img src="https://img.icons8.com/officexs/30/000000/lightning-bolt.png"/>Buy Now</a>
+  </div>
+
+  </div>
+  <div class="column">
+
+  <div class="container-fluid text-center text-md-left">
+
+    <h2>Realme X2 (Pearl Blue, 256 GB)  (8 GB RAM)</h2>
+    <p>4.8<img src="https://img.icons8.com/ios/24/000000/star.png"/> 35,035 Ratings & 4054 Reviews</p>
+    <h1 style="color:green;">Extra ₹2000 discount</h1>
+    <h2>₹22,999 8% off</h2>
+    <b>Comming Soon</b>
+    <p><br><b style="color:green;">Available offers</b><br><br>
+
+    <b>Bank Offer</b> Flat ₹30 discount on first prepaid transaction using RuPay debit card, minimum order value ₹750/T&C<br>
+
+    <b>Bank Offer</b> ₹30 Off on first prepaid transaction using UPI. Minimum order value ₹750/-T&C<br>
+
+    <b>Bank Offer</b> Flat ₹75/- off on RuPay debit card purchase above ₹7,500/-T&C<br>
+
+    <b>Bank Offer</b> Flat ₹75 discount on UPI transaction above ₹10,000/-T&C<br><br>
+
+    <img src="img/brand8.jpg"  width=100px height=100px>Brand Warranty of 1 Year Available for Mobile and 6 Months for Accessories
+
+    </p>
+   <p ><br>
+   <b>Color</b> <li>Pearl Blue</li><li>Pearl Green</li><li>Pearl White</li><br>
+   <b>Highlight</b><li>8 GB RAM | 256 GB ROM</li>
+   <li>16.26 cm (6.4 inch) Full HD+ Display</li>
+   <li>64MP + 8MP + 2MP + 2MP | 32MP Front Camera</li>
+   <li>4000 mAh Battery</li>
+   <li>Qualcomm Snapdragon 730G Processor</li>
+   <li>30W VOOC 4.0 Fast Charger</li>
+
+
+   </p>
+   </div>
+
+  </div>
+</div>
+
+<script>
+magnify("myimage", 3);
+</script>
+
+
+<!-- Footer -->
+<footer class="page-footer font-small blue pt-4">
+
+  <!-- Footer Links -->
+  <div class="container-fluid text-center text-md-left">
+
+    <!-- Grid row -->
+    <div class="row">
+
+
+      <hr class="clearfix w-100 d-md-none pb-3">
+
+      <!-- Grid column -->
+      <div class="col-md-2 mb-md-0 mb-2">
+
+        <!-- Links -->
+        <h5 class="text-uppercase">About</h5>
+
+        <ul class="list-unstyled" id="fl">
+          <li>
+            <a href="/dummy.html">Contact Us</a>
+          </li>
+          <li>
+            <a href="/dummy.html">About Us</a>
+          </li>
+          <li>
+            <a href="/dummy.html">Carrers</a>
+          </li>
+          <li>
+            <a href="/dummy.html">press</a>
+          </li>
+        </ul>
+
+      </div>
+      <!-- Grid column -->
+
+      <!-- Grid column -->
+      <div class="col-md-2 mb-md-0 mb-2">
+
+        <!-- Links -->
+        <h5 class="text-uppercase">Help</h5>
+
+        <ul class="list-unstyled">
+          <li>
+            <a href="/dummy.html">Payments</a>
+          </li>
+          <li>
+            <a href="/dummy.html">Shipping</a>
+          </li>
+          <li>
+            <a href="/dummy.html">Cancellation and Returns</a>
+          </li>
+          <li>
+            <a href="/dummy.html">Report an Issue</a>
+          </li>
+        </ul>
+
+      </div>
+      <!-- Grid column -->
+
+
+
+      <div class="col-md-2 mb-md-0 mb-2">
+
+        <!-- Links -->
+        <h5 class="text-uppercase">Policy</h5>
+
+        <ul class="list-unstyled">
+          <li>
+            <a href="/dummy.html">Return Policy</a>
+          </li>
+          <li>
+            <a href="/dummy.html">Time of Use</a>
+          </li>
+          <li>
+            <a href="/dummy.html">Careers</a>
+          </li>
+          <li>
+            <a href="/dummy.html">Privacy</a>
+          </li>
+        </ul>
+
+      </div>
+
+
+      <div class="col-md-3 mb-md-0 mb-3">
+
+        <!-- Links -->
+        <h5 class="text-uppercase">Mail Us:</h5>
+        
+        <h7>xxx online shopping<br>
+        6/23 abc complex<br>mumbai:52xx9</h7>
+
+      </div>
+
+      
+      <div class="col-md-3 mb-md-0 mb-3">
+
+        <!-- Links -->
+        <h5 class="text-uppercase">registerd office</h5>
+        
+        <h7>Give Reg Adress.</h7>
+
+      </div>
+      
+
+    </div>
+    <!-- Grid row -->
+
+  </div>
+  <!-- Footer Links -->
+
+  
+
+
+</footer>
+<!-- Footer -->
+
+</body>
+</html>

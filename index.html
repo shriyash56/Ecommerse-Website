@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="layout.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+
+
+
+<style>
+.mySlides {display:none}
+.w3-left, .w3-right, .w3-badge {cursor:pointer}
+.w3-badge {height:13px;width:13px;padding:0}
+</style>
+</head>
+<body>
+
+<nav class="topnav">
+  <!-- Brand/logo -->
+  <a class="navbar-brand" href="#">
+    <img src="img/logo1.png" alt="logo" width=60px>
+  </a>
+
+  <div class="search-container">
+    <form action="/dummy.html">
+     <input type="text" name="search" placeholder="Search..">
+      <button type="submit"><i class="fa fa-search"></i></button>
+    </form>
+  </div> 
+
+  <div class="button1" >
+  <button type="button" class="btn btn-secondary">Login</button>
+  </div>
+
+</nav>
+
+
+<div class="topnav1" id="myTopnav">
+  <a href="index.html">Home</a>
+  <a href="mobile.html">Mobiles</a>
+  <a href="/dummy.html">TV & Appliance</a>
+  <a href="/dummy.html">Men</a>
+  <a href="/dummy.html">Women</a>
+  <a href="/dummy.html">Baby & kids</a>
+  <a href="/dummy.html">Home & Furniture</a>
+
+  <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+    <i class="fa fa-bars"></i>
+  </a>
+</div>
+
+
+
+<script>
+function myFunction() {
+  var x = document.getElementById("myTopnav");
+  if (x.className === "topnav1") {
+    x.className += " responsive";
+  } else {
+    x.className = "topnav1";
+  }
+}
+</script>
+
+
+
+
+
+<!--slider-->
+
+<div class="w3-content w3-display-container" style="max-width:800px">
+  <img class="mySlides" src="img/img2.jpg"  height=495px width=100%>
+  <img class="mySlides" src="img/img1.jpg" style="width:100%" height=495px>
+  <img class="mySlides" src="img/img6.jpg" style="width:100%" height=495px>
+  <img class="mySlides" src="img/img5.png" style="width:100%" height=495px>
+  <img class="mySlides" src="img/img7.jpg" style="width:100%" height=495px>
+
+  <div class="w3-center w3-container w3-section w3-large w3-text-white w3-display-bottommiddle" style="width:100%">
+    <div class="w3-left w3-hover-text-khaki" onclick="plusDivs(-1)">&#10094;</div>
+    <div class="w3-right w3-hover-text-khaki" onclick="plusDivs(1)">&#10095;</div>
+    <span class="w3-badge demo w3-border w3-transparent w3-hover-white" onclick="currentDiv(1)"></span>
+    <span class="w3-badge demo w3-border w3-transparent w3-hover-white" onclick="currentDiv(2)"></span>
+    <span class="w3-badge demo w3-border w3-transparent w3-hover-white" onclick="currentDiv(3)"></span>
+    <span class="w3-badge demo w3-border w3-transparent w3-hover-white" onclick="currentDiv(4)"></span>
+    <span class="w3-badge demo w3-border w3-transparent w3-hover-white" onclick="currentDiv(5)"></span>
+
+  </div>
+</div>
+
+
+
+<script>
+var slideIndex = 1;
+showDivs(slideIndex);
+
+function plusDivs(n) {
+  showDivs(slideIndex += n);
+}
+
+function currentDiv(n) {
+  showDivs(slideIndex = n);
+}
+
+function showDivs(n) {
+  var i;
+  var x = document.getElementsByClassName("mySlides");
+  var dots = document.getElementsByClassName("demo");
+  if (n > x.length) {slideIndex = 1}
+  if (n < 1) {slideIndex = x.length}
+  for (i = 0; i < x.length; i++) {
+    x[i].style.display = "none";  
+  }
+  for (i = 0; i < dots.length; i++) {
+    dots[i].className = dots[i].className.replace(" w3-white", "");
+  }
+  x[slideIndex-1].style.display = "block";  
+  dots[slideIndex-1].className += " w3-white";
+}
+
+var myIndex = 0;
+carousel();
+
+function carousel() {
+    var i;
+    var x = document.getElementsByClassName("mySlides");
+    var dots = document.getElementsByClassName("demo");
+    for (i = 0; i < x.length; i++) {
+       x[i].style.display = "none";  
+    }
+    for (i = 0; i < dots.length; i++) {
+    dots[i].className = dots[i].className.replace(" w3-white", "");
+    }
+    myIndex++;
+    if (myIndex > x.length) {myIndex = 1}    
+    x[myIndex-1].style.display = "block";  
+    setTimeout(carousel, 5000);    
+}
+</script>
+
+
+
+<script>
+// Set the date we're counting down to
+var countDownDate = new Date("Jul 31, 2020 15:37:25").getTime();
+
+// Update the count down every 1 second
+var x = setInterval(function() {
+
+  // Get today's date and time
+  var now = new Date().getTime();
+    
+  // Find the distance between now and the count down date
+  var distance = countDownDate - now;
+    
+  // Time calculations for days, hours, minutes and seconds
+  var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+  var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+  var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+    
+  // Output the result in an element with id="demo"
+  document.getElementById("demo").innerHTML = days + "d " + hours + "h "
+  + minutes + "m " + seconds + "s ";
+    
+  // If the count down is over, write some text 
+  if (distance < 0) {
+    clearInterval(x);
+    document.getElementById("demo").innerHTML = "EXPIRED";
+  }
+}, 1000);
+</script>
+
+<div class="deals">
+  <h1>Hurry Up! Deals Of The Day</h1>
+  <h2 id="demo"></h2>
+ 
+</div>
+
+
+<div class="row">
+  <div class="column">
+    <div class="card">
+     <img src="img/offer1.png"  width=170px height=220px id="myPicture">
+     
+    </div>
+  </div>
+
+  <div class="column">
+    <div class="card">
+     <img src="img/offer2.png"  width=170px height=220px id="myPicture1">
+     
+    </div>
+  </div>
+  
+  <div class="column">
+    <div class="card">
+      <img src="img/offer3.jpg"  width=170px height=220px id="myPicture2">
+     
+    </div>
+  </div>
+
+  <div class="column">
+    <div class="card">
+      <img src="img/offer3.jpg"  width=170px height=220px id="myPicture3">
+     
+    </div>
+  </div>
+
+</div>
+
+<!--Javascript code for random images-->
+
+<script>
+
+window.onload = choosePic;
+
+var myPix = new Array("img/offer1.png","img/offer2.png","img/offer3.jpg","img/offer4.png","img/offer5.png","img/offer6.png");
+
+function choosePic() {
+     var randomNum = Math.floor(Math.random() * myPix.length);
+     var randomNum1 = Math.floor(Math.random() * myPix.length);
+     var randomNum2 = Math.floor(Math.random() * myPix.length);
+     var randomNum3 = Math.floor(Math.random() * myPix.length);
+
+     document.getElementById("myPicture").src = myPix[randomNum];
+     document.getElementById("myPicture1").src = myPix[randomNum1];
+     document.getElementById("myPicture2").src = myPix[randomNum2];
+     document.getElementById("myPicture3").src = myPix[randomNum3];
+}
+</script>
+
+
+<!-- Footer -->
+<footer class="page-footer font-small blue pt-4">
+
+  <!-- Footer Links -->
+  <div class="container-fluid text-center text-md-left">
+
+    <!-- Grid row -->
+    <div class="row">
+
+
+      <hr class="clearfix w-100 d-md-none pb-3">
+
+      <!-- Grid column -->
+      <div class="col-md-2 mb-md-0 mb-2">
+
+        <!-- Links -->
+        <h5 class="text-uppercase">About</h5>
+
+        <ul class="list-unstyled" id="fl">
+          <li>
+            <a href="/dummy.html">Contact Us</a>
+          </li>
+          <li>
+            <a href="/dummy.html">About Us</a>
+          </li>
+          <li>
+            <a href="/dummy.html">Carrers</a>
+          </li>
+          <li>
+            <a href="/dummy.html">press</a>
+          </li>
+        </ul>
+
+      </div>
+      <!-- Grid column -->
+
+      <!-- Grid column -->
+      <div class="col-md-2 mb-md-0 mb-2">
+
+        <!-- Links -->
+        <h5 class="text-uppercase">Help</h5>
+
+        <ul class="list-unstyled">
+          <li>
+            <a href="/dummy.html">Payments</a>
+          </li>
+          <li>
+            <a href="/dummy.html">Shipping</a>
+          </li>
+          <li>
+            <a href="/dummy.html">Cancellation and Returns</a>
+          </li>
+          <li>
+            <a href="/dummy.html">Report an Issue</a>
+          </li>
+        </ul>
+
+      </div>
+      <!-- Grid column -->
+
+
+
+      <div class="col-md-2 mb-md-0 mb-2">
+
+        <!-- Links -->
+        <h5 class="text-uppercase">Policy</h5>
+
+        <ul class="list-unstyled">
+          <li>
+            <a href="/dummy.html">Return Policy</a>
+          </li>
+          <li>
+            <a href="/dummy.html">Time of Use</a>
+          </li>
+          <li>
+            <a href="/dummy.html">Careers</a>
+          </li>
+          <li>
+            <a href="/dummy.html">Privacy</a>
+          </li>
+        </ul>
+
+      </div>
+
+
+      <div class="col-md-3 mb-md-0 mb-3">
+
+        <!-- Links -->
+        <h5 class="text-uppercase">Mail Us:</h5>
+        
+        <h7>xxx online shopping<br>
+        6/23 abc complex<br>mumbai:52xx9</h7>
+
+      </div>
+
+      
+      <div class="col-md-3 mb-md-0 mb-3">
+
+        <!-- Links -->
+        <h5 class="text-uppercase">registerd office</h5>
+        
+        <h7>Give Reg Adress.</h7>
+
+      </div>
+      
+
+    </div>
+    <!-- Grid row -->
+
+  </div>
+  <!-- Footer Links -->
+
+  
+
+
+</footer>
+<!-- Footer -->
+
+</body>
+</html>

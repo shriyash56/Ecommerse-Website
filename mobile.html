@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="layout1.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+ <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+</head>
+<body>
+
+<nav class="topnav">
+  <!-- Brand/logo -->
+   <a class="navbar-brand" href="#">
+    <img src="img/logo1.png" alt="logo" width=60px>
+  </a>
+
+  <div class="search-container">
+    <form action="/dummy.html">
+  <input type="text" name="search" placeholder="Search..">
+      <button type="submit"><i class="fa fa-search"></i></button>
+    </form>
+  </div>  
+
+  
+  <div class="button1" >
+  <button type="button" class="btn btn-secondary">Login</button>
+  </div>
+
+</nav>
+
+
+<div class="topnav1" id="myTopnav">
+  <a href="index.html">Home</a>
+  <a href="mobile.html">Mobiles</a>
+  <a href="/dummy.html">TV & Appliance</a>
+  <a href="/dummy.html">Men</a>
+  <a href="/dummy.html">Women</a>
+  <a href="/dummy.html">Baby & kids</a>
+  <a href="/dummy.html">Home & Furniture</a>
+
+  <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+    <i class="fa fa-bars"></i>
+  </a>
+</div>
+
+
+
+<script>
+function myFunction() {
+  var x = document.getElementById("myTopnav");
+  if (x.className === "topnav1") {
+    x.className += " responsive";
+  } else {
+    x.className = "topnav1";
+  }
+}
+</script>
+
+<div class="row">
+  <div class="column">
+    <div class="card">
+     <img src="img/brand5.png"  width=170px height=120px>
+     <h4>HTC</h4>
+    </div>
+  </div>
+
+  <div class="column">
+    <div class="card">
+     <img src="img/brand3.png"  width=170px height=120px>
+     <h4>Samsung</h4>
+    </div>
+  </div>
+  
+  <div class="column">
+    <div class="card">
+      <img src="img/brand8.jpg"  width=170px height=120px >
+     <h4>Realme</h4>
+    </div>
+  </div>
+  
+  <div class="column">
+    <div class="card">
+      <img src="img/brand21.png" width=170px height=120px>
+     <h4>Vivo</h4>
+    </div>
+  </div>
+
+  <div class="column">
+    <div class="card">
+      <img src="img/brand2.jpg" width=170px height=120px>
+     <h4>Oppo</h4>
+    </div>
+  </div>
+
+  
+  <div class="column">
+    <div class="card">
+      <img src="img/brand7.png" width=170px height=120px>
+     <h4>Mi</h4>
+    </div>
+  </div>
+
+</div>
+
+
+
+
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="carousel slide multi-item-carousel" id="theCarousel">
+        <div class="carousel-inner">
+          <div class="item active">
+            <div class="col-xs-4"><a href="realme.html"><img src="img/realme.jpg" class="img-responsive"></a> 
+            <h4>Realme X2<br>₹22,990</h4></div>
+
+          </div>
+          <div class="item">
+            <div class="col-xs-4"><a href="/dummy.html"><img src="img/redmi.jpg" class="img-responsive"></a>
+            <h4>Redmi Note 8Pro<br>₹14,990</h4></div></div>
+          
+          <div class="item">
+            <div class="col-xs-4"><a href="/dummy.html"><img src="img/vivo.jpg" class="img-responsive"></a>
+            <h4>Vivo Y17<br>₹13,900</h4></div>
+          </div>
+          <div class="item">
+            <div class="col-xs-4"><a href="/dummy.html"><img src="img/oppo.jpg" class="img-responsive"></a>
+         <h4>Oppo F11<br>₹14,990</h4></div>
+          </div>
+          <div class="item">
+            <div class="col-xs-4"><a href="/dummy.html"><img src="img/htc.jpg" class="img-responsive"></a>
+            <h4>HTC<br>₹18,990</h4></div>
+          </div>
+          <div class="item">
+            <div class="col-xs-4"><a href="/dummy.html"><img src="img/oneplus3.jpg" class="img-responsive"></a>
+            <h4>Oneplus 7T<br>₹34,999</div>
+          </div>
+         
+
+          <!--  Example item end -->
+        </div>
+        <a class="left carousel-control" href="#theCarousel" data-slide="prev"><i class="glyphicon glyphicon-chevron-left"></i></a>
+        <a class="right carousel-control" href="#theCarousel" data-slide="next"><i class="glyphicon glyphicon-chevron-right"></i></a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<style media="screen">
+  .multi-item-carousel .carousel-inner > .item {
+  transition: 500ms ease-in-out left;
+}
+.multi-item-carousel .carousel-inner .active.left {
+  left: -33%;
+}
+.multi-item-carousel .carousel-inner .active.right {
+  left: 33%;
+}
+.multi-item-carousel .carousel-inner .next {
+  left: 33%;
+}
+.multi-item-carousel .carousel-inner .prev {
+  left: -33%;
+}
+@media all and (transform-3d), (-webkit-transform-3d) {
+  .multi-item-carousel .carousel-inner > .item {
+    transition: 500ms ease-in-out left;
+    transition: 500ms ease-in-out all;
+    -webkit-backface-visibility: visible;
+            backface-visibility: visible;
+    -webkit-transform: none!important;
+            transform: none!important;
+  }
+}
+.multi-item-carousel .carouse-control.left,
+.multi-item-carousel .carouse-control.right {
+  background-image: none;
+}
+
+
+h1 {
+  color: white;
+  font-size: 2.25em;
+  text-align: center;
+  margin-top: 1em;
+  margin-bottom: 2em;
+  text-shadow: 0px 2px 0px #000000;
+}
+
+</style>
+<script type="text/javascript">
+  // Instantiate the Bootstrap carousel
+$('.multi-item-carousel').carousel({
+  interval: false
+});
+
+// for every slide in carousel, copy the next slide's item in the slide.
+// Do the same for the next, next item.
+$('.multi-item-carousel .item').each(function(){
+  var next = $(this).next();
+  if (!next.length) {
+    next = $(this).siblings(':first');
+  }
+  next.children(':first-child').clone().appendTo($(this));
+
+  if (next.next().length>0) {
+    next.next().children(':first-child').clone().appendTo($(this));
+  } else {
+  	$(this).siblings(':first').children(':first-child').clone().appendTo($(this));
+  }
+});
+</script>
+
+
+
+<!-- Footer -->
+<footer class="page-footer font-small blue pt-4">
+
+  <!-- Footer Links -->
+  <div class="container-fluid text-center text-md-left">
+
+    <!-- Grid row -->
+    <div class="row">
+
+
+      <hr class="clearfix w-100 d-md-none pb-3">
+
+      <!-- Grid column -->
+      <div class="col-md-2 mb-md-0 mb-2">
+
+        <!-- Links -->
+        <h5 class="text-uppercase">About</h5>
+
+        <ul class="list-unstyled" id="fl">
+          <li>
+            <a href="/dummy.html">Contact Us</a>
+          </li>
+          <li>
+            <a href="/dummy.html">About Us</a>
+          </li>
+          <li>
+            <a href="/dummy.html">Carrers</a>
+          </li>
+          <li>
+            <a href="/dummy.html">press</a>
+          </li>
+        </ul>
+
+      </div>
+      <!-- Grid column -->
+
+      <!-- Grid column -->
+      <div class="col-md-2 mb-md-0 mb-2">
+
+        <!-- Links -->
+        <h5 class="text-uppercase">Help</h5>
+
+        <ul class="list-unstyled">
+          <li>
+            <a href="/dummy.html">Payments</a>
+          </li>
+          <li>
+            <a href="/dummy.html">Shipping</a>
+          </li>
+          <li>
+            <a href="/dummy.html">Cancellation and Returns</a>
+          </li>
+          <li>
+            <a href="/dummy.html">Report an Issue</a>
+          </li>
+        </ul>
+
+      </div>
+      <!-- Grid column -->
+
+
+
+      <div class="col-md-2 mb-md-0 mb-2">
+
+        <!-- Links -->
+        <h5 class="text-uppercase">Policy</h5>
+
+        <ul class="list-unstyled">
+          <li>
+            <a href="/dummy.html">Return Policy</a>
+          </li>
+          <li>
+            <a href="/dummy.html">Time of Use</a>
+          </li>
+          <li>
+            <a href="/dummy.html">Careers</a>
+          </li>
+          <li>
+            <a href="/dummy.html">Privacy</a>
+          </li>
+        </ul>
+
+      </div>
+
+
+      <div class="col-md-3 mb-md-0 mb-3">
+
+        <!-- Links -->
+        <h5 class="text-uppercase">Mail Us:</h5>
+        
+        <h7>xxx online shopping<br>
+        6/23 abc complex<br>mumbai:52xx9</h7>
+
+      </div>
+
+      
+      <div class="col-md-3 mb-md-0 mb-3">
+
+        <!-- Links -->
+        <h5 class="text-uppercase">registerd office</h5>
+        
+        <h7>Give Reg Adress.</h7>
+
+      </div>
+      
+
+    </div>
+    <!-- Grid row -->
+
+  </div>
+  <!-- Footer Links -->
+
+  
+
+
+</footer>
+<!-- Footer -->
+
+</body>
+</html>
